@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 63
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "unique": true,
+      "maxLength": 380
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "date": {
+      "required": true,
+      "type": "date"
+    },
+    "category": {
+      "type": "customField",
+      "options": [
+        "news",
+        "reviews",
+        "tips",
+        "guide",
+        "recommendations",
+        "insights"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    }
+  }
+}
